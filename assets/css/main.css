@@ -2593,8 +2593,10 @@ input, select, textarea {
 		-ms-justify-content: space-between;
 		justify-content: space-between;
 		background-color: #1f1815;
+		/* this should do shadow!!! */
+		box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
 		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+		/* background-image: url("images/overlay.png"), url("../../images/bg.jpg"); */
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
@@ -2625,7 +2627,7 @@ input, select, textarea {
 		}
 
 		#header strong, #header b {
-			color: #ffffff;
+			color: #fff6a9;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -2633,7 +2635,7 @@ input, select, textarea {
 		}
 
 		#header h1 {
-			color: rgba(255, 255, 255, 0.5);
+			color: #fffbdb;
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
@@ -3079,7 +3081,9 @@ input, select, textarea {
 			#footer {
 				background-attachment: scroll;
 				background-color: #1f1815;
-				background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+				/* this should do shadow!!! */
+				box-shadow: 10px 10px 30px 20px rgba(0, 0, 0, 0.3);
+				/* background-image: url("images/overlay.png"), url("../../images/bg.jpg"); */
 				background-position: top left,						bottom center;
 				background-repeat: repeat,							no-repeat;
 				background-size: auto,							cover;
