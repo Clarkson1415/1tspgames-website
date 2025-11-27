@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #fff;
+		background: #513200;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -98,7 +98,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #a2a2a2;
+		color: #fff6a9;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
@@ -135,7 +135,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #787878;
+		color: #fff6a9;
 		font-weight: 400;
 		line-height: 1em;
 		margin: 0 0 1em 0;
@@ -2444,9 +2444,9 @@ input, select, textarea {
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-radius: 0.35em;
-		border: solid 3px #000000;
+		border: solid 1px #00660f;
 		color: #000000 !important;
-		background-color: #09e778;
+		background-color: #7ff49b;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 400;
@@ -2465,8 +2465,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		.button:hover {
 			border-color: #000000;
-			background-color: #7c09e7;
-			color: #ffffff !important;
+			background-color: #d2a7fb;
+			color: #000000 !important;
 		}
 
 		input[type="submit"]:active,
@@ -2690,9 +2690,9 @@ input, select, textarea {
 	}
 
 		#main > section {
-			border-top: solid 2px #efefef;
-			margin: 4em 0 0 0;
-			padding: 4em 0 0 0;
+			border-top: solid 2px rgb(200, 211, 197);
+			margin: 2em 0 0 0;
+			padding: 2em 0 0 0;
 		}
 
 			#main > section:first-child {
