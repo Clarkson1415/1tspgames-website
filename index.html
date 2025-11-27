@@ -4,6 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
 <html>
 	<head>
 		<title>1 Tsp Games</title>
@@ -11,7 +12,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+
 	<body class="is-preload">
+
+		<div id="emailModal" class="email-popup">
+			<div class="email-popup-content">
+				<span class="close">&times;</span>
+				<h2>Subscribe to our newsletter</h2>
+				<input type="email" id="emailInput" placeholder="Enter your email">
+				<br>
+				<button class="button" id="submitEmail">Sign Up</button>
+			</div>
+		</div>
+
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
@@ -34,7 +47,7 @@
 				<section id="one">
 					<p>Join my Mailing List for EXCLUSIVE access to Beta playtests, be notified of new games, and demo releases!</p>
 					<ul class="actions">
-						<li><a href="#" class="button">Join My Mailing List.</a></li>
+						<li><a href="#" id="subscribeBtn" class="button">Join My Mailing List.</a></li>
 					</ul>
 				</section>
 			
@@ -92,7 +105,7 @@
 						<h2></h2>
 						<p>Why are you still reading? Go play my games. (or sign up to the mailling list please)</p>
 						<ul class="actions">
-							<li><a href="#" class="button">Join My Mailing List.</a></li>
+							<li><a href="#" id="subscribeBtn" class="button">Join My Mailing List.</a></li>
 						</ul>
 					</section>
 
@@ -443,3 +456,35 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
+<script>
+	const modal = document.getElementById("emailModal");
+	const btn = document.getElementById("subscribeBtn");
+	const span = document.querySelector(".close");
+	const submitBtn = document.getElementById("submitEmail");
+	const emailInput = document.getElementById("emailInput");
+
+	// Open the modal
+	btn.onclick = () => modal.style.display = "block";
+
+	// Close the modal when the X is clicked
+	span.onclick = () => modal.style.display = "none";
+
+	// Close the modal if clicked outside the popup content
+	window.onclick = (event) => {
+		if (event.target === modal) modal.style.display = "none";
+	}
+
+	// Handle the email submission
+	submitBtn.onclick = () => {
+		const email = emailInput.value.trim();
+		if (email && email.includes('@')) {
+			alert(`Thanks! ${email} has been added to our mailing list.`);
+			// Here you would normally send the email to your server or mailing service
+			emailInput.value = "";
+			modal.style.display = "none";
+		} else {
+			alert("Please enter a valid email address.");
+		}
+	}
+</script>
