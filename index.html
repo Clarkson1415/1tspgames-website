@@ -21,7 +21,7 @@
 				<h2>Subscribe to our newsletter</h2>
 				<input type="email" id="emailInput" placeholder="Enter your email">
 				<br>
-				<button class="button" id="submitEmail">Sign Up</button>
+				<a class="button" id="submitEmail">Sign Up</a>
 			</div>
 		</div>
 
@@ -46,9 +46,7 @@
 				
 				<section id="one">
 					<p>Join my Mailing List for EXCLUSIVE access to Beta playtests, be notified of new games, and demo releases!</p>
-					<ul class="actions">
-						<li><a href="#" id="subscribeBtn" class="button">Join My Mailing List.</a></li>
-					</ul>
+					<a id="subscribeBtnOne" class="button">Join My Mailing List.</a>
 				</section>
 			
 				<!-- Upcoming -->
@@ -104,9 +102,7 @@
 					<section>
 						<h2></h2>
 						<p>Why are you still reading? Go play my games. (or sign up to the mailling list please)</p>
-						<ul class="actions">
-							<li><a href="#" id="subscribeBtn" class="button">Join My Mailing List.</a></li>
-						</ul>
+						<a id="subscribeBtnTwo" class="button">Join My Mailing List.</a>
 					</section>
 
 				<!-- Four -->
@@ -459,13 +455,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 <script>
 	const modal = document.getElementById("emailModal");
-	const btn = document.getElementById("subscribeBtn");
+	const btnOne = document.getElementById("subscribeBtnOne");
+	const btnTwo = document.getElementById("subscribeBtnTwo");
 	const span = document.querySelector(".close");
 	const submitBtn = document.getElementById("submitEmail");
 	const emailInput = document.getElementById("emailInput");
 
 	// Open the modal
-	btn.onclick = () => modal.style.display = "block";
+	btnOne.onclick = () => modal.style.display = "block";
+	btnTwo.onclick = () => modal.style.display = "block";
 
 	// Close the modal when the X is clicked
 	span.onclick = () => modal.style.display = "none";
@@ -477,14 +475,27 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	// Handle the email submission
 	submitBtn.onclick = () => {
-		const email = emailInput.value.trim();
-		if (email && email.includes('@')) {
-			alert(`Thanks! ${email} has been added to our mailing list.`);
-			// Here you would normally send the email to your server or mailing service
-			emailInput.value = "";
-			modal.style.display = "none";
-		} else {
-			alert("Please enter a valid email address.");
-		}
-	}
+			const email = emailInput.value.trim();
+			if (email && email.includes('@')) {
+				// Replace this with your Apps Script URL
+				const url = "https://script.google.com/macros/s/AKfycbxTUrGI1WV8XQd6MJ9EWxuygxcf9Mx7cv92nFRyimUBmJis-yXY1R2HMabbl49xIoZqow/exec";
+
+				fetch(url + "?email=" + encodeURIComponent(email), {
+					method: "POST",
+				})
+					.then(response => response.text())
+					.then(data => {
+						alert(`Thanks! ${email} has been added to our mailing list.`);
+						emailInput.value = "";
+						modal.style.display = "none";
+					})
+					.catch(error => {
+						console.error("Error:", error);
+						alert("Oops! Something went wrong.");
+					});
+
+			} else {
+				alert("Please enter a valid email address.");
+			}
+		};
 </script>
