@@ -485,9 +485,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				// Replace this with your Apps Script URL
 				const url = "https://script.google.com/macros/s/AKfycbxTUrGI1WV8XQd6MJ9EWxuygxcf9Mx7cv92nFRyimUBmJis-yXY1R2HMabbl49xIoZqow/exec";
 
-				fetch(url + "?email=" + encodeURIComponent(email), {
+				fetch(url, {
 					method: "POST",
-				})
+					headers: { "Content-Type": "application/x-www-form-urlencoded" },
+					body: "email=" + encodeURIComponent(email)
+					})
 					.then(response => response.text())
 					.then(data => {
 						alert(`Thanks! ${email} has been added to our mailing list.`);
