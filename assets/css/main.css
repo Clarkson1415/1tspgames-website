@@ -2463,6 +2463,61 @@ input, select, textarea {
 				border-top: 0;
 			}
 
+
+/* Container for the tabs top-tabs TOP TABS topTabs */
+.top-tabs {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	gap: 10px;
+	padding: 0 0 12px 0;
+	justify-content: center;
+	/* glass style */
+	background: rgba(192, 154, 28, 0.212);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+
+	border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+
+	/* shadow */
+	box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+		0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Tab button */
+.top-tabs .tab-btn {
+	padding: 10px 18px;
+	border: solid 1px #00660f;
+	color: #000000 !important;
+	background-color: #7ff49b;
+	text-decoration: none;
+	font-weight: 600;
+	border-radius: 0px 0px 6px 6px;
+
+	transition: 0.2s ease, padding 0.2s ease;
+}
+
+/* Hover */
+.top-tabs .tab-btn:hover {
+	border-color: #000000;
+	background-color: #d2a7fb;
+	color: #000000 !important;
+	
+	padding-top: 16px;
+		/* increases top padding to push button down */
+}
+
+/* Active / clicked */
+.top-tabs .tab-btn:active {
+	background-color: rgba(73, 191, 157, 0.1);
+	border-color: #49bf9d;
+	color: #49bf9d !important;
+	transform: translateY(3px);
+			/* keep it down while clicking */
+}
+
 /* Button */
 
 	input[type="submit"],
@@ -2676,7 +2731,7 @@ input, select, textarea {
 		}
 
 		#header .image.avatar {
-			margin: 0 0 1em 0;
+			margin: 2em 0 1em 0;
 			width: 6.25em;
 		}
 
@@ -2721,7 +2776,7 @@ input, select, textarea {
 	#main {
 		margin-left: 35%;
 		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		padding: 1em 4em 4em 4em;
 		width: calc(100% - 35%);
 	}
 
