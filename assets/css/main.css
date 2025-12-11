@@ -144,7 +144,6 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
 		color: #49bf9d;
 		text-decoration: none;
 	}
@@ -2471,51 +2470,40 @@ input, select, textarea {
 	left: 0;
 	right: 0;
 	display: flex;
-	gap: 10px;
-	padding: 0 0 12px 0;
+	padding: 0.5em 0 0.5em 0;
 	justify-content: center;
 	/* glass style */
 	background: rgba(192, 154, 28, 0.212);
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
-
-	border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-
+	/* border-bottom: 2px solid rgba(255, 255, 255, 0.3); */
 	/* shadow */
 	box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
 		0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 /* Tab button */
-.top-tabs .tab-btn {
-	padding: 10px 18px;
-	border: solid 1px #00660f;
-	color: #000000 !important;
-	background-color: #7ff49b;
-	text-decoration: none;
+.top-tabs .cozy-bee-button {
+	padding: 1em 1em 1em 1em;
+	/* layout */
+	position: relative;
+	display: inline-block;
+	pointer-events: auto;
+	/* typography */
+	font-family: var(--font-sour-gummy), serif;
 	font-weight: 600;
-	border-radius: 0px 0px 6px 6px;
-
-	transition: 0.2s ease, padding 0.2s ease;
+	font-size: 1.25rem;
+	/* text-xl */
+	line-height: 1.75rem;
+	color: #000000;
+	text-decoration: none;
 }
 
-/* Hover */
-.top-tabs .tab-btn:hover {
-	border-color: #000000;
-	background-color: #d2a7fb;
-	color: #000000 !important;
-	
-	padding-top: 16px;
-		/* increases top padding to push button down */
-}
-
-/* Active / clicked */
-.top-tabs .tab-btn:active {
-	background-color: rgba(73, 191, 157, 0.1);
-	border-color: #49bf9d;
-	color: #49bf9d !important;
-	transform: translateY(3px);
-			/* keep it down while clicking */
+/* ensure no underline on hover/focus */
+.top-tabs .cozy-bee-button:hover,
+.top-tabs .cozy-bee-button:focus,
+.top-tabs .cozy-bee-button:active {
+	text-decoration: none;
 }
 
 /* Button */
@@ -2532,8 +2520,8 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-		border-radius: 0.35em;
-		border: solid 1px #00660f;
+		border-radius: 0.2em;
+		border: solid 2px #00660f;
 		color: #000000 !important;
 		background-color: #7ff49b;
 		cursor: pointer;
@@ -2781,7 +2769,7 @@ input, select, textarea {
 	}
 
 		#main > section {
-			border-top: solid 2px rgb(200, 211, 197);
+			/* border-top: solid 2px rgb(200, 211, 197); */
 			margin: 2em 0 0 0;
 			padding: 2em 0 0 0;
 		}
