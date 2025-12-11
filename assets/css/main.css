@@ -144,7 +144,6 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
 		color: #49bf9d;
 		text-decoration: none;
 	}
@@ -2463,6 +2462,50 @@ input, select, textarea {
 				border-top: 0;
 			}
 
+
+/* Container for the tabs top-tabs TOP TABS topTabs */
+.top-tabs {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	padding: 0.5em 0 0.5em 0;
+	justify-content: center;
+	/* glass style */
+	background: rgba(192, 154, 28, 0.212);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	/* border-bottom: 2px solid rgba(255, 255, 255, 0.3); */
+	/* shadow */
+	box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+		0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Tab button */
+.top-tabs .cozy-bee-button {
+	padding: 1em 1em 1em 1em;
+	/* layout */
+	position: relative;
+	display: inline-block;
+	pointer-events: auto;
+	/* typography */
+	font-family: var(--font-sour-gummy), serif;
+	font-weight: 600;
+	font-size: 1.25rem;
+	/* text-xl */
+	line-height: 1.75rem;
+	color: #000000;
+	text-decoration: none;
+}
+
+/* ensure no underline on hover/focus */
+.top-tabs .cozy-bee-button:hover,
+.top-tabs .cozy-bee-button:focus,
+.top-tabs .cozy-bee-button:active {
+	text-decoration: none;
+}
+
 /* Button */
 
 	input[type="submit"],
@@ -2477,8 +2520,8 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-		border-radius: 0.35em;
-		border: solid 1px #00660f;
+		border-radius: 0.2em;
+		border: solid 2px #00660f;
 		color: #000000 !important;
 		background-color: #7ff49b;
 		cursor: pointer;
@@ -2676,7 +2719,7 @@ input, select, textarea {
 		}
 
 		#header .image.avatar {
-			margin: 0 0 1em 0;
+			margin: 2em 0 1em 0;
 			width: 6.25em;
 		}
 
@@ -2721,12 +2764,12 @@ input, select, textarea {
 	#main {
 		margin-left: 35%;
 		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		padding: 1em 4em 4em 4em;
 		width: calc(100% - 35%);
 	}
 
 		#main > section {
-			border-top: solid 2px rgb(200, 211, 197);
+			/* border-top: solid 2px rgb(200, 211, 197); */
 			margin: 2em 0 0 0;
 			padding: 2em 0 0 0;
 		}
